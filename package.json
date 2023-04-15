@@ -4,7 +4,8 @@
   "description": "this is blog post web application backend server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev":"concurrently \"npm start\"\"npm run client\""
   },
   "author": "kapil",
   "license": "ISC",
