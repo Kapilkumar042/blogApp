@@ -18,6 +18,8 @@ app.use(express.static(path.join(__dirname, "../blog/blog_post/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../blog/blog_post/build/index.html"));
 });
+
+const port = process.env.PORT;
 mongoose
   .connect(`${process.env.MONGO_URL}`, {
     useNewUrlParser: true,
@@ -50,6 +52,6 @@ app.use("/api/user", userRoute);
 app.use("/api/post", postRoute);
 app.use("/api/cat", catRoute);
 
-app.listen("5000", () => {
+app.listen(port, () => {
   console.log("backend is running");
 });
